@@ -22,6 +22,8 @@ public interface BithubService {
    * @param email email del usuario a devolver
    * @return <code>Optional</code> que contiene el usuario que cumpla los criterios si existe
    */
+
+
   Optional<User> getUserByEmail(String email);
 
   /**

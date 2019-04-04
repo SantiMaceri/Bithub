@@ -1,7 +1,7 @@
 package ar.edu.unlp.info.bd2.model;
 
 
-import javax.persistence.Entity;
+import javax.persistence.Entity; //Esto es muy probable que este mal, lo crea el ide por las notation Entity y Id
 import javax.persistence.Id;
 
 @Entity(name = "User")
@@ -13,7 +13,7 @@ public class User {
     private String email;
 
 
-    public void setId(Integer id) {
+    private void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public class User {
 
     }
 
-    public User(String name, String email) {
+    public User(String email, String name) {
         this.name = name;
         this.email = email;
     }
