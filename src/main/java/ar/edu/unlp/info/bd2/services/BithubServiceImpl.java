@@ -20,7 +20,12 @@ public class BithubServiceImpl implements BithubService {
 
     public User createUser(String email, String name){
        User user = new User(email, name);
-        return repository.persistUser(user);
+       return repository.persistUser(user);
 
+    }
+
+    public Branch createBranch(String name){
+        Branch branch = new Branch(name);
+        return repository.persistBranch(branch);
     }
 }

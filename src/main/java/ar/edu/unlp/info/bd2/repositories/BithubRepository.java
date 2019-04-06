@@ -17,6 +17,11 @@ public class BithubRepository {
 
     }
 
+    public Branch persistBranch(Branch branch){
+        this.sessionFactory.getCurrentSession().save(branch);
+        return branch;
+    }
+
 
 
 

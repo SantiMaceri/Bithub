@@ -30,9 +30,9 @@ public class BithubServiceTestCase {
 
   @Test
   public void testCreateBranchAndCommit() {
-    /*Branch master = this.service.createBranch("master");
+    Branch master = this.service.createBranch("master");
     assertNotNull(master.getId());
-    assertEquals("master", master.getName()); */
+    assertEquals("master", master.getName());
 
     User user = this.service.createUser("user@bithub.bd2.info.unlp.edu.ar", "User");
     assertNotNull(user.getId());
