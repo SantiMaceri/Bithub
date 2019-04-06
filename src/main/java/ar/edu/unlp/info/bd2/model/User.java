@@ -1,7 +1,7 @@
 package ar.edu.unlp.info.bd2.model;
 
 
-import javax.persistence.*; //Esto es muy probable que este mal, lo crea el ide por las notation Entity y Id
+import javax.persistence.*;
 import java.util.*;
 
 @Entity
