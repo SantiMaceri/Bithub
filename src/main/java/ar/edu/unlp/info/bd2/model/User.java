@@ -1,19 +1,21 @@
 package ar.edu.unlp.info.bd2.model;
 
 
-import javax.persistence.Entity; //Esto es muy probable que este mal, lo crea el ide por las notation Entity y Id
-import javax.persistence.Id;
+import javax.persistence.*; //Esto es muy probable que este mal, lo crea el ide por las notation Entity y Id
+import java.util.*;
 
-@Entity(name = "User")
+@Entity
+@Table(name = "User")
 
 public class User {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
 
 
-    private void setId(Integer id) {
+    private void setId(Long id) {
         this.id = id;
     }
 
@@ -25,7 +27,7 @@ public class User {
         this.email = emai;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

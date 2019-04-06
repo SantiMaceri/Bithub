@@ -24,14 +24,14 @@ public interface BithubService {
    */
 
 
-  Optional<User> getUserByEmail(String email);
+//  Optional<User> getUserByEmail(String email);
 
   /**
    * Crea un nuevo branch con nombre <code>name</code>
    * @param name nNombre del branch a ser creado
    * @return el branch creado
    */
-  Branch createBranch(String name);
+//  Branch createBranch(String name);
 
   /**
    * Crea un nuevo <code>Commit</code>
@@ -42,7 +42,7 @@ public interface BithubService {
    * @param branch branch en el cual se realiza el commit
    * @return el commit creado con los valores provistos
    */
-  Commit createCommit(String description, String hash, User author, List<File> files, Branch branch);
+ // Commit createCommit(String description, String hash, User author, List<File> files, Branch branch);
 
   /**
    * Crea un tag (alias) para un commit dado
@@ -51,7 +51,7 @@ public interface BithubService {
    * @return el tag creado con los parámetros provistos
    * @throws BithubException en caso de que no exista el commit con el hash provisto
    */
-  Tag createTagForCommit(String commitHash, String name) throws BithubException;
+//  Tag createTagForCommit(String commitHash, String name) throws BithubException;
 
   /**
    * Obtiene un commit con el hash dado
@@ -59,7 +59,7 @@ public interface BithubService {
    *
    * @return <code>Optional</code> que contiene el commit de exisir
    */
-  Optional<Commit> getCommitByHash(String commitHash);
+ // Optional<Commit> getCommitByHash(String commitHash);
 
   /**
    * Crea un nuevo archivo a ser commiteado
@@ -67,14 +67,14 @@ public interface BithubService {
    * @param content contenido textual del archivo
    * @return el archivo creado con los parámetros provistos
    */
-  File createFile(String name, String content);
+ // File createFile(String name, String content);
 
   /**
    * Obtiene un tag por su nombre
    * @param tagName nombre del tag a ser obtenido
    * @return <code>Optional</code> que contiene el tag de existir
    */
-  Optional<Tag> getTagByName(String tagName);
+ // Optional<Tag> getTagByName(String tagName);
 
   /**
    * Crea un nuevo code review realizado por un usuario dado para un branch específico
@@ -82,7 +82,7 @@ public interface BithubService {
    * @param user usuario que realiza el code review
    * @return el code review creado con los parámetros dados
    */
-  Review createReview(Branch branch, User user);
+ // Review createReview(Branch branch, User user);
 
   /**
    * Agrega un nuevo review particular de un archivo a un review dado
@@ -94,28 +94,28 @@ public interface BithubService {
    * @throws BithubException en caso de que el archivo sobre el cual se hace el review no corresponda al branch del
    *                         mismo
    */
-  FileReview addFileReview(Review review, File file, int lineNumber, String comment) throws BithubException;
+ // FileReview addFileReview(Review review, File file, int lineNumber, String comment) throws BithubException;
 
   /**
    * Obtiene un review específico por id
    * @param id id del review de archivo a obtener
    * @return <code>Optional</code> que contiene el review de existir
    */
-  Optional<Review> getReviewById(long id);
+ // Optional<Review> getReviewById(long id);
 
   /**
    * Obtiene todos los commits de un usuario dado en todos sus branches
    * @param userId id del usuario para el cual se quieren obtener los commits
    * @return lista de cero o más commits de ese usuario en particular
    */
-  List<Commit> getAllCommitsForUser(long userId);
+ // List<Commit> getAllCommitsForUser(long userId);
 
   /**
    * Obtiene un <code>Map</code> en el cual se listan los ids de usuarios y su correspondiente lista de commits en todos
    * los branches
    * @return el mapa descripto arriba
    */
-  Map<Long, Long> getCommitCountByUser();
+ // Map<Long, Long> getCommitCountByUser();
 
   /**
    * Obtiene una lista de todos los usuarios que commitearon en un branch específico
@@ -123,12 +123,12 @@ public interface BithubService {
    * @return la lista de cero o más usuarios descripta arriba
    * @throws BithubException si el branch con ese nombre no existe
    */
-  List<User> getUsersThatCommittedInBranch(String branchName) throws BithubException;
+ // List<User> getUsersThatCommittedInBranch(String branchName) throws BithubException;
 
   /**
    * Obtiene un branch por su nombre
    * @param branchName nombre del branch a obtener
    * @return <code>Optional</code> que contiene el branch de existir
    */
-  Optional<Branch> getBranchByName(String branchName);
+ // Optional<Branch> getBranchByName(String branchName);
 }
